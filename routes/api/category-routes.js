@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
       id: req.params.id
-    }
+    },
     attributes: ['id', 'category_name'],
     include: [
       {
@@ -92,5 +92,6 @@ router.delete('/:id', (req, res) => {
     res.status(500).json(err);
   });
 });
+})
 
 module.exports = router;
